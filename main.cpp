@@ -12,21 +12,30 @@
 using namespace std;
 
 //
+// Description: Concatinates an array of c strings
+//   into a single c++ string.
+// int n: The number of c strings in array.
+// char *array[]: An array of c strings.
+// char sep: A character to seperate each string.
+//
+string ConcatCStrArray(int n, char *array[], char sep) {
+	stringstream ccat;
+	for (int i = 0; i < n; i++) {
+		ccat << array[i] << sep;
+	}
+	return ccat.str();
+}
+
+//
 // Description: Converts the argc and argv arguments
 //   typically obtained in the main function to
 //   the command issued at the command line.
 // int argc: The number of arguements.
 // char *argv[]: Arguements to command in an array.
-// Return: The command as a C++ string.
+// Return: The command as a c++ string.
 //
 string CommandString(int argc, char *argv[]) {
-	// Loops through command name and 
-	// its arguements
-	stringstream cmd;
-	for (int i = 0; i < argc; i++) {
-		cmd << argv[i] << " ";
-	}
-	return cmd.str();	
+	return ConcatCStrArray(argc, argv, ' ');
 }
 
 int main(int argc, char *argv[]) {
