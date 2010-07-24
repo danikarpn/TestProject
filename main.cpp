@@ -6,15 +6,30 @@
 // Date: 2010-06-24
 //
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+//
+// Description: Converts the argc and argv arguments
+//   typically obtained in the main function to
+//   the command issued at the command line.
+// int argc: The number of arguements.
+// char *argv[]: An array of c strings.
+// Return: The command as a C++ string.
+//
+string CommandString(int argc, char *argv[]) {
 	// Loops through command name and 
 	// its arguements
+	stringstream cmd;
 	for (int i = 0; i < argc; i++) {
-		cout << argv[i] << " ";
+		cmd << argv[i] << " ";
 	}
-	cout << endl;
+	return cmd.str();	
+}
+
+int main(int argc, char *argv[]) {
+	cout << CommandString(argc, argv) << endl;
 	return 0;
 }
