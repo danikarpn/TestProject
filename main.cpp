@@ -16,7 +16,7 @@ using namespace std;
 //   typically obtained in the main function to
 //   the command issued at the command line.
 // int argc: The number of arguements.
-// char *argv[]: An array of c strings.
+// char *argv[]: Arguements to command in an array.
 // Return: The command as a C++ string.
 //
 string CommandString(int argc, char *argv[]) {
