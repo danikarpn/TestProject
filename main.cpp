@@ -18,7 +18,7 @@ using namespace std;
 // char *array[]: An array of c strings.
 // char sep: A character to seperate each string.
 //
-string ConcatCStrArray(int n, char *array[], char sep) {
+string JoinCStrArray(int n, char *array[], char sep) {
 	stringstream ccat;
 	for (int i = 0; i < n; i++) {
 		ccat << array[i] << sep;
@@ -35,7 +35,7 @@ string ConcatCStrArray(int n, char *array[], char sep) {
 // Return: The command as a c++ string.
 //
 string CommandString(int argc, char *argv[]) {
-	return ConcatCStrArray(argc, argv, ' ');
+	return JoinCStrArray(argc, argv, ' ');
 }
 
 int main(int argc, char *argv[]) {
@@ -43,3 +43,4 @@ int main(int argc, char *argv[]) {
 
 	return 0;
 }
+
