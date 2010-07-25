@@ -38,7 +38,3 @@ string CommandString(int argc, char *argv[]) {
 	return ConcatCStrArray(argc, argv, ' ');
 }
 
-int main(int argc, char *argv[]) {
-	cout << CommandString(argc, argv) << endl;
-	return 0;
-}
